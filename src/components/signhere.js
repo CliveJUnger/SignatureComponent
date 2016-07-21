@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 import SignaturePad from 'react-signature-pad';
 import { Link } from 'react-router';
 
@@ -7,8 +9,7 @@ class SignHere extends Component {
     var signature = this.refs.mySignature;
     var data = signature.toDataURL('image/png');
     if(!signature.isEmpty()) {
-      window.open(data);
-      console.log(data);
+      this.props.passSignature(data);
     }
   }
 
@@ -17,7 +18,7 @@ class SignHere extends Component {
       <div>
         <SignaturePad clearButton = "true" ref="mySignature" />
         <div className="m-signature-pad--footer">
-          <button onClick={this.submit.bind(this)} className="btn btn-primary submit-button">Submit</button>
+          <Link className='btn btn-primary submit-button' to="/confirm" onClick={this.submit.bind(this)} >Submit</Link>
           <Link className="btn btn-primary back-button" to="/">Back</Link>
         </div>
       </div>
@@ -25,4 +26,4 @@ class SignHere extends Component {
   }
 }
 
-export default SignHere;
+export default connect(null, actions)(SignHere);
