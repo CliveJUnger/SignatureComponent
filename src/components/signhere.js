@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import SignaturePad from 'react-signature-pad';
 import { Link } from 'react-router';
+import GeneratePdf from './pdfGen';
 
 class SignHere extends Component {
   submit() {
     var signature = this.refs.mySignature;
     var data = signature.toDataURL('image/png');
     if(!signature.isEmpty()) {
-      this.props.passSignature(data);
+      //this.props.passSignature(data);
+      GeneratePdf(data);
     }
   }
 
