@@ -10,8 +10,8 @@ class SignHere extends Component {
     var signature = this.refs.mySignature;
     var data = signature.toDataURL('image/png');
     if(!signature.isEmpty()) {
-      //this.props.passSignature(data);
-      GeneratePdf(data);
+      this.props.passSignature(data);
+      //GeneratePdf(data);
     }
   }
 

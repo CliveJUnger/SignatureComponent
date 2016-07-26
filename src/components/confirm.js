@@ -7,7 +7,7 @@ import GeneratePdf from './pdfGen';
 
 class ConfirmForm extends Component {
   componentWillMount(){
-    //GeneratePdf(this.props.signature);
+    GeneratePdf(this.props.signature);
   }
 
   render() {
