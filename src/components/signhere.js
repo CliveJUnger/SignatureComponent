@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import SignaturePad from 'react-signature-pad';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import GeneratePdf from './pdfGen';
 
 class SignHere extends Component {
@@ -10,7 +10,9 @@ class SignHere extends Component {
     var signature = this.refs.mySignature;
     var data = signature.toDataURL('image/png');
     if(!signature.isEmpty()) {
-      this.props.passSignature(data);
+      var pdf = GeneratePdf(data);
+      this.props.passSignature(pdf);
+      browserHistory.push('/confirm');
       //GeneratePdf(data);
     }
   }
@@ -20,7 +22,7 @@ class SignHere extends Component {
       <div>
         <SignaturePad clearButton = "true" ref="mySignature" />
         <div className="m-signature-pad--footer">
-          <Link className='btn btn-primary submit-button' to="/confirm" onClick={this.submit.bind(this)} >Submit</Link>
+          <button className='btn btn-primary submit-button' onClick={this.submit.bind(this)} >Submit</button>
           <Link className="btn btn-primary back-button" to="/">Back</Link>
         </div>
       </div>

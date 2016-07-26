@@ -9,12 +9,21 @@
   right:140px;
   bottom:40px;
 }
+.line-separator{
+
+height:5px;
+
+background:#717171;
+
+border-bottom:1px solid #313030;
+
+}
 
 .m-signature-pad {
   position: absolute;
   font-size: 10px;
   width: 700px;
-  height: 200px;
+  height: 250px;
   top: 40%;
   left: 50%;
   margin-left: -350px;
@@ -124,6 +133,7 @@
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .m-signature-pad {
     margin: 10%;
+    height:auto;
   }
 }
 

@@ -40,14 +40,15 @@ export default function (signatureURI) {
   doc.text(1.01, 10.2, today);
   doc.text(1.01, 8.2, today);
 
+  doc.setFontSize(20);
   if (dumby_data.felony) {
-    doc.text(.59,5.57, "*");
+    doc.text(.54,5.59, "X");
   } else {
-    doc.text(.59,6.25, "*");
+    doc.text(.54,6.27, "X");
   }
 
   if (dumby_data.renew) {
-    doc.text(2.088,1.58, "*");
+    doc.text(2.05,1.6, "X");
   }
 
   //Add Signature
@@ -55,5 +56,17 @@ export default function (signatureURI) {
 
   //Open pdf in new window
   var blob = doc.output("blob");
-  window.open(URL.createObjectURL(blob));
+  //window.open(URL.createObjectURL(blob));
+
+  var specialElementHandlers = {
+    '#editor': function(element, renderer){
+      return true;
+    }
+  };
+  // All units are in the set measurement for the document
+  // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+  doc.fromHTML($('#render_me').get(0), 15, 15, {
+    'width': 170,
+    'elementHandlers': specialElementHandlers
+  });
 }

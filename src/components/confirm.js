@@ -3,17 +3,19 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import * as actions from '../actions';
 import GeneratePdf from './pdfGen';
+import PDF from 'react-pdf';
+import PDFJS from 'pdfjs-dist';
 
 
 class ConfirmForm extends Component {
   componentWillMount(){
-    GeneratePdf(this.props.signature);
+    //GeneratePdf(this.props.signature);
+    console.log(this.props.signature);
   }
 
   render() {
     return(
       <div>
-      Yo
       </div>
     );
   }
@@ -24,3 +26,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(ConfirmForm);
+
+//Async SOAP calls
