@@ -5,18 +5,23 @@ import * as actions from '../actions';
 import GeneratePdf from './pdfGen';
 import PDF from 'react-pdf';
 import PDFJS from 'pdfjs-dist';
+import CanvasToImage from 'canvas-to-image-node';
 
 
 class ConfirmForm extends Component {
-  componentWillMount(){
-    //GeneratePdf(this.props.signature);
-    console.log(this.props.signature);
+  componentDidMount(){
+    var canvas = document.getElementsByTagName("canvas");
+    //var canvas = document.getElementById("pdfCanvas");
+    console.log(canvas);
+    CanvasToImage.saveAsJPEG(canvas);
   }
 
   render() {
     return(
       <div>
+        <PDF file={this.props.signature} />
       </div>
+
     );
   }
 }

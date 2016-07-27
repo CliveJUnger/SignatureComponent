@@ -57,16 +57,6 @@ export default function (signatureURI) {
   //Open pdf in new window
   var blob = doc.output("blob");
   //window.open(URL.createObjectURL(blob));
+  return URL.createObjectURL(blob);
 
-  var specialElementHandlers = {
-    '#editor': function(element, renderer){
-      return true;
-    }
-  };
-  // All units are in the set measurement for the document
-  // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
-  doc.fromHTML($('#render_me').get(0), 15, 15, {
-    'width': 170,
-    'elementHandlers': specialElementHandlers
-  });
 }
