@@ -9,17 +9,19 @@ import CanvasToImage from 'canvas-to-image-node';
 
 
 class ConfirmForm extends Component {
-  componentDidMount(){
+  //Returns canvas as jpeg base64 data uri
+  confirmImg(){
     var canvas = document.getElementsByTagName("canvas");
-    //var canvas = document.getElementById("pdfCanvas");
-    console.log(canvas);
-    CanvasToImage.saveAsJPEG(canvas);
+    var image = canvas[0].toDataURL("image/jpeg", 1.0);
+    window.open(image);
   }
 
   render() {
     return(
       <div>
-        <PDF file={this.props.signature} />
+        <PDF file={this.props.pdf} />
+        <button className="btn btn-primary" onClick={this.confirmImg}>Confirm</button>
+        <a className="btn btn-primary" href={this.props.pdf} download>Download</a>
       </div>
 
     );
@@ -27,9 +29,7 @@ class ConfirmForm extends Component {
 }
 
 function mapStateToProps(state) {
-  return { signature: state.data.signature };
+  return { pdf: state.data.pdf };
 }
 
 export default connect(mapStateToProps)(ConfirmForm);
-
-//Async SOAP calls

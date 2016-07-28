@@ -2,9 +2,9 @@
 import {top_uri} from '../../images/top_uri';
 import {bot_uri} from '../../images/bot_uri';
 import jsPDF from '../../jsPDF/dist/jspdf.min.js';
-import {dumby_data} from '../dumby_data';
+//import {dumby_data} from '../dumby_data';
 
-export default function (signatureURI) {
+export default function (signatureURI, dumby_data) {
   //init pdf object
   var doc = new jsPDF("p","in", [8.5,11]);
 
@@ -58,5 +58,4 @@ export default function (signatureURI) {
   var blob = doc.output("blob");
   //window.open(URL.createObjectURL(blob));
   return URL.createObjectURL(blob);
-
 }
