@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
-    "canvas-to-image-node": "^1.0.4",
     "jspdf": "^1.2.61",
     "lodash": "^3.10.1",
     "pdfjs-dist": "^1.5.355",

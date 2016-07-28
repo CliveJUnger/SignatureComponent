@@ -1,11 +1,10 @@
-//import {texas_notary_app_uri} from '../../images/texas_notary_app_uri';
 import {top_uri} from '../../images/top_uri';
 import {bot_uri} from '../../images/bot_uri';
 import jsPDF from '../../jsPDF/dist/jspdf.min.js';
-//import {dumby_data} from '../dumby_data';
+//import jsPDF from 'jspdf';
 
 export default function (signatureURI, dumby_data) {
-  //init pdf object
+  //init pdf object as portrait 8.5x11 document with coordinate grid in inches
   var doc = new jsPDF("p","in", [8.5,11]);
 
   //Get today's date
@@ -56,6 +55,5 @@ export default function (signatureURI, dumby_data) {
 
   //Open pdf in new window
   var blob = doc.output("blob");
-  //window.open(URL.createObjectURL(blob));
   return URL.createObjectURL(blob);
 }
