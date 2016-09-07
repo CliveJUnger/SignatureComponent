@@ -1,12 +1,11 @@
 # TX Notary Signature Component
 
-Boilerplate code forked from [StepenGrider](https://github.com/StephenGrider/ReduxSimpleStarter)?
+Boilerplate code forked from [StepenGrider](https://github.com/StephenGrider/ReduxSimpleStarter)
 
-###Dependencies:###
+This component takes a user signature and populates the TX Notary Application with dumby data (which would have otherwise been inputed by the user.)
 
-
-###Getting Started###
-Checkout this repo, install dependencies, then start the gulp process with the following:
+###Testing###
+Run the following commands then visit localhost:8080 to see the project.
 
 ```
 	> git clone git@github.com:CliveJUnger/SignatureComponent.git
