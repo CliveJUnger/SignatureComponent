@@ -1,23 +1,23 @@
 export const dumby_data = {
   renew: true,
   renewal_date:"",
-  last_name: "Unger",
-  first_name: "Clive",
+  last_name: "Doe",
+  first_name: "John",
   middle_name:"John",
   suffix:"Sir",
   ss: "123-45-6789",
   address: {
-    street: "9612 Old Farm Rd",
-    city: "Woodway",
-    zip: "76712",
-    county:"Mclennan"
+    street: "123 Road Street",
+    city: "City",
+    zip: "12345",
+    county:"County"
   },
-  email:"clive.unger@gmail.com",
-  alt_email:"clive.unger@utexas.edu",
-  dob: "7/10/1997",
+  email:"email@gmail.com",
+  alt_email:"alt@gmail.com",
+  dob: "1/11/1999",
   dl: {
-    number: "36738928",
-    issue_state:"TX"
+    number: "12344321",
+    issue_state:"NY"
   },
   felony: false,
   bond_number:"12345"
