@@ -2,10 +2,10 @@
 
 Boilerplate code forked from [StepenGrider](https://github.com/StephenGrider/ReduxSimpleStarter)
 
-This component takes a user signature and populates the TX Notary Application with dumby data (which would have otherwise been inputed by the user.)
+This component allows users to create an electronic signature using their mouse or finger(mobile). The signature is then used to populate the TX notary application along with other user data. In this instance, dumby data is used instead of real inputed data.
 
 ###Testing###
-Run the following commands then visit localhost:8080 to see the project.
+Run the following commands then visit localhost:8080/signhere to see the project.
 
 ```
 	> git clone git@github.com:CliveJUnger/SignatureComponent.git
