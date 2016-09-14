@@ -8,7 +8,7 @@ This component allows users to create an electronic signature using their mouse 
 Run the following commands then visit localhost:8080/signhere to see the project.
 
 ```
-	> git clone git@github.com:CliveJUnger/SignatureComponent.git
+	> git clone https://github.com/CliveJUnger/SignatureComponent.git
 	> cd SignatureComponent
 	> npm install
 	> npm start
